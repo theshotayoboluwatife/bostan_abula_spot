@@ -43,24 +43,20 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       //Spacer(),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
+                      Image.asset(
                           'assets/images/brand_identity/abulaSpotLagos.png',
                           width: 150,
                           height: 162,
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
+
+                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: List.generate(
                             2,
                             (index) => buildAuthActionTab(index),
                           ),
                         ),
-                      )
+
                     ],
                   ),
                 ),
@@ -91,6 +87,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
           children: [
             CustomText(
               text: authTypeText[index],
+              color: Colors.black,
             ),
             const Gap(20.0),
             Divider(
