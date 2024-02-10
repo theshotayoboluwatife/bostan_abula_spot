@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../../widgets/custom_text.dart';
 
 enum AuthType { signIn, signUp }
 
-class LoginSignUpScreen extends StatelessWidget {
+List<bool> selectedAuthType = List.generate(2, (index) => false);
+
+class LoginSignUpScreen extends StatefulWidget {
   const LoginSignUpScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginSignUpScreen> createState() => _LoginSignUpScreenState();
+}
+
+class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -46,10 +54,11 @@ class LoginSignUpScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Row(
-                          children: [
-                            AuthActionTab(),
-                            AuthActionTab(),
-                          ],
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: List.generate(
+                            2,
+                            (index) => buildAuthActionTab(index),
+                          ),
                         ),
                       )
                     ],
@@ -63,27 +72,34 @@ class LoginSignUpScreen extends StatelessWidget {
       ),
     );
   }
-}
 
-class AuthActionTab extends StatefulWidget {
-  final AuthType authType;
+  Widget buildAuthActionTab(int index) {
+    final String authTypeText = ['Login', 'Sign-up'][index];
+    bool isSelected = selectedAuthType[index];
 
-  const AuthActionTab({Key? key, required this.authType}) : super(key: key);
-
-  @override
-  State<AuthActionTab> createState() => _AuthActionTabState();
-}
-
-class _AuthActionTabState extends State<AuthActionTab> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          CustomText(
-            text: widget.authType == AuthType.signIn ? 'Login' : 'Sign-up',
-          ),
-        ],
+    return SizedBox(
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            for (int i = 0; i < 2; i++) {
+              selectedAuthType[i] = false;
+            }
+            selectedAuthType[index] = true;
+          });
+        },
+        child: Column(
+          children: [
+            CustomText(
+              text: authTypeText[index],
+            ),
+            const Gap(20.0),
+            Divider(
+              height: 2,
+              thickness: 8.0,
+              color: isSelected ? const Color(0xffFA4A0C) : Colors.transparent,
+            ),
+          ],
+        ),
       ),
     );
   }
