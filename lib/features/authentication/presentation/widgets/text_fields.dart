@@ -29,15 +29,10 @@ class _EmailTextField extends State<EmailTextField> {
       style: const TextStyle(color: Colors.black),
       keyboardType: widget.textInputType,
       autofillHints: const [AutofillHints.email],
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         isDense: true,
-        hintStyle: const TextStyle(
-          color: Color(0XFF6B7380),
-        ),
-        fillColor: Colors.white,
-        filled: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.orange),
         ),
       ),
     );
@@ -92,13 +87,8 @@ class _PasswordTextFieldState extends State<PasswordTextField>
             ),
           ),
         ),
-        hintStyle: const TextStyle(
-          color: Color(0XFF6B7380),
-        ),
-        fillColor: Colors.white,
-        filled: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.orange),
         ),
       ),
     );

@@ -15,12 +15,12 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  @override
+  /*@override
   void dispose() {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
             onPressed: () {},
             child: const CustomText(
               text: 'Forgot password?',
-              color: Colors.orange,
+              color: Color(0xffFA4A0C),
             ),
           ),
           const Gap(50.0),
@@ -66,7 +66,7 @@ class _LoginFormState extends State<LoginForm> {
               style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
               child: const CustomText(
                 text: 'Login',
-                color: Colors.white,
+                color: Color(0xffFA4A0C),
               ),
             ),
           ),
