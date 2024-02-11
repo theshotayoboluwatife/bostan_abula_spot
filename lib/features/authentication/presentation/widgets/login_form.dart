@@ -2,6 +2,7 @@ import 'package:AbulaBostan/features/authentication/presentation/widgets/text_fi
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text.dart';
 
 class LoginForm extends StatefulWidget {
@@ -52,21 +53,11 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           const Gap(50.0),
-          SizedBox(
-            width: double.infinity,
-            height: 50.0,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(backgroundColor: Color(0xffFA4A0C)),
-              child: const CustomText(
-                text: 'Login',
-                color: Colors.white,
-              ),
-            ),
-          ),
+          AppButton(onPressed: () {}, text: 'Login'),
           const Gap(50.0),
         ],
       ),
     );
   }
 }
+
