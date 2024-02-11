@@ -44,21 +44,20 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     children: [
                       const Spacer(),
                       Image.asset(
-                          'assets/images/brand_identity/abulaSpotLagos.png',
-                          width: 150,
-                          height: 162,
-                        ),
-
-                       Expanded(
-                         child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: List.generate(
-                              2,
-                              (index) => buildAuthActionTab(index),
-                            ),
+                        'assets/images/brand_identity/abulaSpotLagos.png',
+                        width: 150,
+                        height: 162,
+                      ),
+                      const Spacer(),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: List.generate(
+                            2,
+                            (index) => buildAuthActionTab(index, screenSize),
                           ),
-                       ),
-
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -71,12 +70,12 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
     );
   }
 
-  Widget buildAuthActionTab(int index) {
+  Widget buildAuthActionTab(int index, Size size) {
     final String authTypeText = ['Login', 'Sign-up'][index];
     bool isSelected = selectedAuthType[index];
 
     return SizedBox(
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
           setState(() {
             for (int i = 0; i < 2; i++) {
@@ -93,11 +92,17 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
-            const Gap(20.0),
-            Divider(
-              height: 2,
-              thickness: 8.0,
-              color: isSelected ? const Color(0xffFA4A0C) : Colors.transparent,
+            const Gap(2.0),
+            SizedBox(
+              height: 3,
+              width: size.width*0.28,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(40.0),
+                child: Divider(
+                  thickness: 3.0,
+                  color: isSelected ? const Color(0xffFA4A0C) : Colors.green,
+                ),
+              ),
             ),
           ],
         ),
