@@ -53,15 +53,14 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                       left: 0,
                       right: 0,
                       bottom: 0,
-                      child: Expanded(
-                        child: Row(
+                      child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: List.generate(
                             2,
                             (index) => buildAuthActionTab(index, screenSize),
                           ),
                         ),
-                      ),
+
                     ),
                   ],
                 ),
