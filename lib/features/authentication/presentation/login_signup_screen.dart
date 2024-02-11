@@ -29,7 +29,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: screenSize.height * 0.24,
+                  height: screenSize.height * 0.5,
                   padding: const EdgeInsets.all(8.0),
                   decoration: const BoxDecoration(
                     color: Colors.white,
@@ -49,13 +49,15 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           height: 162,
                         ),
 
-                       Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: List.generate(
-                            2,
-                            (index) => buildAuthActionTab(index),
+                       Expanded(
+                         child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                              2,
+                              (index) => buildAuthActionTab(index),
+                            ),
                           ),
-                        ),
+                       ),
 
                     ],
                   ),
