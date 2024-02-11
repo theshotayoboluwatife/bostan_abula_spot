@@ -5,7 +5,7 @@ import '../../../widgets/custom_text.dart';
 
 enum AuthType { signIn, signUp }
 
-List<bool> selectedAuthType = List.generate(2, (index) => false);
+List<bool> selectedAuthType = [true,false];
 
 class LoginSignUpScreen extends StatefulWidget {
   const LoginSignUpScreen({Key? key}) : super(key: key);
@@ -100,7 +100,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                 borderRadius: BorderRadius.circular(40.0),
                 child: Divider(
                   thickness: 3.0,
-                  color: isSelected ? const Color(0xffFA4A0C) : Colors.green,
+                  color: isSelected ? const Color(0xffFA4A0C) : Colors.transparent,
                 ),
               ),
             ),
