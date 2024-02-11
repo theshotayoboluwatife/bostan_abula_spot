@@ -26,6 +26,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Form(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
             text: 'Email address',
@@ -37,11 +38,39 @@ class _LoginFormState extends State<LoginForm> {
             controller: emailController,
             textInputType: TextInputType.emailAddress,
           ),
+          const Gap(20.0),
+          CustomText(
+            text: 'Password',
+            fontSize: 15,
+            color: Colors.black.withOpacity(0.5),
+          ),
           const Gap(10.0),
           PasswordTextField(
             controller: passwordController,
             textInputType: TextInputType.visiblePassword,
           ),
+          const Gap(20.0),
+          TextButton(
+            onPressed: () {},
+            child: const CustomText(
+              text: 'Forgot password?',
+              color: Colors.orange,
+            ),
+          ),
+          const Gap(50.0),
+          SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+              child: const CustomText(
+                text: 'Login',
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const Gap(50),
         ],
       ),
     );
