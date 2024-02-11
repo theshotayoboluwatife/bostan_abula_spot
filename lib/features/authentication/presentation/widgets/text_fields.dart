@@ -32,7 +32,7 @@ class _EmailTextField extends State<EmailTextField> {
       decoration: const InputDecoration(
         isDense: true,
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.orange),
+          borderSide: BorderSide(color: Color(0xffFA4A0C), width: 2),
         ),
       ),
     );
@@ -82,13 +82,13 @@ class _PasswordTextFieldState extends State<PasswordTextField>
             padding: const EdgeInsets.symmetric(vertical: 15),
             child: FaIcon(
               isVisible ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye,
-              color: Colors.blue,
+              color: const Color(0xffFA4A0C),
               size: 20,
             ),
           ),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.orange),
+          borderSide: BorderSide(color: Color(0xffFA4A0C), width: 2),
         ),
       ),
     );
