@@ -3,8 +3,6 @@ import 'package:gap/gap.dart';
 
 import '../../../widgets/custom_text.dart';
 
-enum AuthType { signIn, signUp }
-
 List<bool> selectedAuthType = [true, false];
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -27,11 +25,14 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                //Brand logo and Page Indicator
                 Stack(
                   children: [
+                    //Brand logo
                     Container(
                       width: double.infinity,
                       height: screenSize.height * 0.45,
+                      alignment: Alignment.center,
                       padding: const EdgeInsets.all(8.0),
                       decoration: const BoxDecoration(
                         color: Colors.white,
@@ -40,20 +41,14 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           bottomRight: Radius.circular(30.0),
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Spacer(),
-                          Image.asset(
-                            'assets/images/brand_identity/abulaSpotLagos.png',
-                            width: 150,
-                            height: 162,
-                          ),
-                          const Spacer(),
-                        ],
+                      child: Image.asset(
+                        'assets/images/brand_identity/abulaSpotLagos.png',
+                        width: 150,
+                        height: 162,
                       ),
                     ),
+
+                    //Page indicator
                     Positioned(
                       left: 0,
                       right: 0,
@@ -70,6 +65,8 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     ),
                   ],
                 ),
+
+                //Login and SignUp Form
                 Container(),
               ],
             ),
@@ -79,6 +76,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
     );
   }
 
+  //method to build build page indicator
   Widget buildAuthActionTab(int index, Size size) {
     final String authTypeText = ['Login', 'Sign-up'][index];
     bool isSelected = selectedAuthType[index];
