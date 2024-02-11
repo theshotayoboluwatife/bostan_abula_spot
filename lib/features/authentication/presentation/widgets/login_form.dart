@@ -15,19 +15,13 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  /*@override
-  void dispose() {
-    super.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-  }*/
-
   @override
   Widget build(BuildContext context) {
     return Form(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Gap(30.0),
           CustomText(
             text: 'Email address',
             fontSize: 15,
@@ -60,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
           const Gap(50.0),
           SizedBox(
             width: double.infinity,
-            height: 50,
+            height: 50.0,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(backgroundColor: Color(0xffFA4A0C)),
@@ -70,7 +64,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
-          const Gap(50),
+          const Gap(50.0),
         ],
       ),
     );

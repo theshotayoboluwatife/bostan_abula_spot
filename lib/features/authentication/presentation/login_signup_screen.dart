@@ -44,16 +44,16 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                       ),
                       child: Image.asset(
                         'assets/images/brand_identity/abulaSpotLagos.png',
-                        width: 150,
-                        height: 162,
+                        width: 150.0,
+                        height: 162.0,
                       ),
                     ),
 
                     //Page indicator
                     Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
+                      left: 0.0,
+                      right: 0.0,
+                      bottom: 0.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: List.generate(
@@ -100,12 +100,12 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
             CustomText(
               text: authTypeText,
               color: Colors.black,
-              fontSize: 18,
+              fontSize: 18.0,
               fontWeight: FontWeight.w500,
             ),
             const Gap(10),
             SizedBox(
-              height: 3,
+              height: 3.0,
               width: size.width * 0.28,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(40.0),
