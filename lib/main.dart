@@ -1,4 +1,4 @@
-import 'package:bostan_abulaspot/routing/app_routes.dart';
+import 'package:AbulaBostan/routing/app_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -5,7 +5,7 @@ import '../../../widgets/custom_text.dart';
 
 enum AuthType { signIn, signUp }
 
-List<bool> selectedAuthType = [true,false];
+List<bool> selectedAuthType = [true, false];
 
 class LoginSignUpScreen extends StatefulWidget {
   const LoginSignUpScreen({Key? key}) : super(key: key);
@@ -27,29 +27,38 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  width: double.infinity,
-                  height: screenSize.height * 0.45,
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30.0),
-                      bottomRight: Radius.circular(30.0),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Spacer(),
-                      Image.asset(
-                        'assets/images/brand_identity/abulaSpotLagos.png',
-                        width: 150,
-                        height: 162,
+                Stack(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: screenSize.height * 0.45,
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30.0),
+                          bottomRight: Radius.circular(30.0),
+                        ),
                       ),
-                      const Spacer(),
-                      Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Spacer(),
+                          Image.asset(
+                            'assets/images/brand_identity/abulaSpotLagos.png',
+                            width: 150,
+                            height: 162,
+                          ),
+                          const Spacer(),
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Expanded(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: List.generate(
@@ -58,8 +67,8 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 Container(),
               ],
@@ -85,6 +94,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
           });
         },
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomText(
               text: authTypeText,
@@ -92,15 +102,16 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
-            const Gap(2.0),
+            const Gap(10),
             SizedBox(
               height: 3,
-              width: size.width*0.28,
+              width: size.width * 0.28,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(40.0),
                 child: Divider(
                   thickness: 3.0,
-                  color: isSelected ? const Color(0xffFA4A0C) : Colors.transparent,
+                  color:
+                      isSelected ? const Color(0xffFA4A0C) : Colors.transparent,
                 ),
               ),
             ),
