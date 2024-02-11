@@ -22,27 +22,27 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: const EdgeInsets.all(20.0),
+        color: const Color(0xffEDEDED),
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
                   width: double.infinity,
-                  height: screenSize.height * 0.5,
+                  height: screenSize.height * 0.45,
                   padding: const EdgeInsets.all(8.0),
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20.0),
-                      bottomRight: Radius.circular(20.0),
+                      bottomLeft: Radius.circular(30.0),
+                      bottomRight: Radius.circular(30.0),
                     ),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      //Spacer(),
+                      const Spacer(),
                       Image.asset(
                           'assets/images/brand_identity/abulaSpotLagos.png',
                           width: 150,
@@ -88,8 +88,10 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
         child: Column(
           children: [
             CustomText(
-              text: authTypeText[index],
+              text: authTypeText,
               color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
             const Gap(20.0),
             Divider(
