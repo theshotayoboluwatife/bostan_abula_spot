@@ -20,7 +20,7 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style:
-        ElevatedButton.styleFrom(backgroundColor: const Color(0xffFA4A0C)),
+            ElevatedButton.styleFrom(backgroundColor: const Color(0xffFA4A0C)),
         child: CustomText(
           text: text,
           color: Colors.white,
@@ -29,7 +29,6 @@ class AppButton extends StatelessWidget {
     );
   }
 }
-
 
 class CustomButton extends StatelessWidget {
   final String text;
