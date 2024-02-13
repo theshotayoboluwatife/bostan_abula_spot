@@ -1,4 +1,4 @@
-import 'package:AbulaBostan/features/home/presentation/widgets/discovery_wrapper.dart';
+import 'package:AbulaBostan/features/home/presentation/widgets/food_tab_wrapper.dart';
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -21,6 +21,7 @@ class DiscoveryScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           padding: const EdgeInsets.all(20.0),
+          color: const Color(0xffEDEDED),
           child:  SingleChildScrollView(
             child: Column(
               children: [
