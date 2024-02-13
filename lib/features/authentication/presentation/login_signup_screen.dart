@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import '../../../widgets/custom_text.dart';
 
 List<bool> selectedAuthType = [true, false];
+bool showLoginForm = true;
 String authType = 'Login';
 
 
@@ -91,12 +92,14 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
       child: InkWell(
         onTap: () {
           setState(() {
+            showLoginForm = !showLoginForm;
             for (int i = 0; i < 2; i++) {
               selectedAuthType[i] = false;
             }
             selectedAuthType[index] = true;
-              authType = authTypeText[index];
-
+            if (selectedAuthType[index] == true) {
+              authType = authTypeText;
+            }
           });
         },
         child: Column(
