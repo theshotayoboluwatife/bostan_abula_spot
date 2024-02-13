@@ -1,10 +1,14 @@
 import 'package:AbulaBostan/features/authentication/presentation/widgets/login_form.dart';
+import 'package:AbulaBostan/features/authentication/presentation/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../widgets/custom_text.dart';
 
 List<bool> selectedAuthType = [true, false];
+bool showLoginForm = true;
+String authTypeText = 'Login';
+
 
 class LoginSignUpScreen extends StatefulWidget {
   const LoginSignUpScreen({Key? key}) : super(key: key);
@@ -69,7 +73,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(20.0),
-                  child: const LoginForm(),
+                  child: authTypeText == 'Login' ? const LoginForm() : const SignUpForm(),
                 ),
               ],
             ),
@@ -88,10 +92,12 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
       child: InkWell(
         onTap: () {
           setState(() {
+            showLoginForm = !showLoginForm;
             for (int i = 0; i < 2; i++) {
               selectedAuthType[i] = false;
             }
             selectedAuthType[index] = true;
+
           });
         },
         child: Column(

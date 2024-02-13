@@ -14,7 +14,9 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController cPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,17 @@ class _SignUpFormState extends State<SignUpForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Gap(30.0),
+          CustomText(
+            text: 'Name',
+            fontSize: 15,
+            color: Colors.black.withOpacity(0.5),
+          ),
+          const Gap(10.0),
+          EmailTextField(
+            controller: nameController,
+            textInputType: TextInputType.emailAddress,
+          ),
+          const Gap(20),
           CustomText(
             text: 'Email address',
             fontSize: 15,
@@ -45,15 +58,18 @@ class _SignUpFormState extends State<SignUpForm> {
             textInputType: TextInputType.visiblePassword,
           ),
           const Gap(20.0),
-          TextButton(
-            onPressed: () {},
-            child: const CustomText(
-              text: 'Forgot password?',
-              color: Color(0xffFA4A0C),
-            ),
+          CustomText(
+            text: 'Confirm password',
+            fontSize: 15,
+            color: Colors.black.withOpacity(0.5),
+          ),
+          const Gap(10.0),
+          PasswordTextField(
+            controller: cPasswordController,
+            textInputType: TextInputType.visiblePassword,
           ),
           const Gap(50.0),
-          AppButton(onPressed: () {}, text: 'Login'),
+          AppButton(onPressed: () {}, text: 'Sign Up'),
           const Gap(50.0),
         ],
       ),
