@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
       ),
-      routerConfig: RoutesConfig.router,
+      routerConfig: AppNavigation.router,
     );
   }
 }

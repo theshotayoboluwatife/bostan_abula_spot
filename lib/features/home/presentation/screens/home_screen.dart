@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 
 import '../widgets/menu_icon.dart';
 
-class DiscoveryScreen extends StatelessWidget {
-  const DiscoveryScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class DiscoveryScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.4,
                     padding: const EdgeInsets.all(2.0),
                     child:
-                    DiscoveryWrapper()
+                    const DiscoveryWrapper()
                 )
 
               ],
