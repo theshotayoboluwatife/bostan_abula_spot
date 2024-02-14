@@ -29,13 +29,23 @@ class _FoodTabsState extends State<FoodTabs>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-     // height: double.infinity,
+      height: 400,
       padding: const EdgeInsets.all(16),
       color: Colors.transparent,
       child: Column(
         children: [
           TabBar(
             controller: _tabController,
+            physics: const ClampingScrollPhysics(),
+            padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+            tabAlignment: TabAlignment.center,
+            labelStyle: const TextStyle(fontSize: 17.0,),
+            unselectedLabelStyle: const TextStyle(fontSize: 17.0,),
+            unselectedLabelColor: const Color(0xff9A9A9D),
+            indicatorColor: const Color(0xffFA4A0C),
+            isScrollable: true,
+            dividerHeight: 0.5,
+            dividerColor: const Color.fromRGBO(153, 153, 153, 0.70),
             tabs: const [
               Tab(text:  'Swallow'),
               Tab(text:  'Soup'),
