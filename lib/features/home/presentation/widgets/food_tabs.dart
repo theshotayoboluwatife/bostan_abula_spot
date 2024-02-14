@@ -1,4 +1,8 @@
+import 'package:AbulaBostan/features/home/presentation/widgets/food_on_display.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import '../../../../widgets/custom_text.dart';
 
 class FoodTabs extends StatefulWidget {
   const FoodTabs({
@@ -39,21 +43,23 @@ class _FoodTabsState extends State<FoodTabs>
             physics: const ClampingScrollPhysics(),
             padding: const EdgeInsets.only(left: 0.0, right: 0.0),
             tabAlignment: TabAlignment.center,
-            labelStyle: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+            labelStyle:
+                const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
             labelColor: const Color(0xffFA4A0C),
-            unselectedLabelStyle: const TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
+            unselectedLabelStyle:
+                const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
             unselectedLabelColor: const Color(0xff9A9A9D),
             indicatorColor: const Color(0xffFA4A0C),
             isScrollable: true,
             dividerHeight: 0.5,
-            dividerColor:  Colors.transparent,
+            dividerColor: Colors.transparent,
             tabs: const [
-              Tab(text:  'Swallow'),
-              Tab(text:  'Soup'),
+              Tab(text: 'Swallow'),
+              Tab(text: 'Soup'),
               Tab(text: 'Meat'),
               Tab(text: 'Staple'),
-              Tab(text:  'Sauce'),
-              Tab(text:  'Drinks'),
+              Tab(text: 'Sauce'),
+              Tab(text: 'Drinks'),
             ],
           ),
           const SizedBox(height: 8),
@@ -61,10 +67,7 @@ class _FoodTabsState extends State<FoodTabs>
             child: TabBarView(
               controller: _tabController,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  child: const Text("Tab 1 Content"),
-                ),
+                const TabFoodContent(),
                 Container(
                   alignment: Alignment.center,
                   child: const Text("Tab 2 Content"),
@@ -79,6 +82,41 @@ class _FoodTabsState extends State<FoodTabs>
           ),
         ],
       ),
+    );
+  }
+}
+
+class TabFoodContent extends StatelessWidget {
+  const TabFoodContent({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Align(
+          alignment: Alignment.centerRight,
+          child: CustomText(
+            text: 'See more',
+            fontSize: 15,
+            color: Color(0xffFA4A0C),
+          ),
+        ),
+        Gap(10),
+        SizedBox(
+          width: double.infinity,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+                children: [
+                  TabFoodContent(),
+                  TabFoodContent(),
+                  TabFoodContent(),
+                ]),
+          ),
+        ),
+      ],
     );
   }
 }

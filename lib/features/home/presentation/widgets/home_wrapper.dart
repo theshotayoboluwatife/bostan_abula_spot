@@ -42,7 +42,6 @@ class _HomeWrapperState extends State<HomeWrapper> {
         },
         iconSize: 30,
         inactiveColor: const
-        //Color(0xffFA4A0C),
         Color(0xffADADAF),
         activeColor: const Color(0xffFA4A0C),
         selectedIndex: selectedIndex,
