@@ -8,8 +8,12 @@ class MenuIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:(){},
-      child: Image.asset('assets/images/abula_menu_icon.png'),
+      onTap: () {},
+      child: Image.asset(
+        'assets/images/abula_menu_icon.png',
+        width: 22,
+        height: 15,
+      ),
     );
   }
 }
