@@ -1,6 +1,7 @@
 import 'package:AbulaBostan/features/authentication/presentation/widgets/text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text.dart';
@@ -69,7 +70,11 @@ class _SignUpFormState extends State<SignUpForm> {
             textInputType: TextInputType.visiblePassword,
           ),
           const Gap(50.0),
-          AppButton(onPressed: () {}, text: 'Sign Up'),
+          AppButton(
+              onPressed: () {
+                context.goNamed('Home');
+              },
+              text: 'Sign Up'),
           const Gap(50.0),
         ],
       ),

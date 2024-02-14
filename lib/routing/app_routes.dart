@@ -12,7 +12,7 @@ import '../features/home/presentation/widgets/home_wrapper.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = "/home";
+  static String initial = '/login-signup';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -100,7 +100,7 @@ class AppNavigation {
         ],
       ),
 
-      /// Player
+      /// LoginSignUp
       GoRoute(
         parentNavigatorKey: _rootNavigatorKey,
         path: '/login-signup',
@@ -108,7 +108,9 @@ class AppNavigation {
         builder: (context, state) => LoginSignUpScreen(
           key: state.pageKey,
         ),
-      )
+      ),
+
+      ///
     ],
   );
 }

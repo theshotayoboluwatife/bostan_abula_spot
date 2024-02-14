@@ -1,6 +1,7 @@
 import 'package:AbulaBostan/features/authentication/presentation/widgets/text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text.dart';
@@ -53,9 +54,11 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           const Gap(50.0),
-          AppButton(onPressed: () {
-
-          }, text: 'Login'),
+          AppButton(
+              onPressed: () {
+                context.goNamed('Home');
+              },
+              text: 'Login'),
           const Gap(50.0),
         ],
       ),

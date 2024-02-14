@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
+        //debugShowCheckedModeBanner: false,
+
       ),
       routerConfig: AppNavigation.router,
     );
