@@ -24,12 +24,10 @@ class HomeScreen extends StatelessWidget {
                 ActionBar(),
                 Gap(30.0),
                 //cruise of the day
-                Padding(
-                    padding: EdgeInsets.only(left: 2, right: 16),
-                    child: CruiseBanner()),
+                CruiseBanner(),
                 Gap(40.0),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                  padding: EdgeInsets.only(left: 16.0, right: 16.0),
                   child: CustomText(
                     text: "Delicious\nfood for you!",
                     textAlign: TextAlign.start,

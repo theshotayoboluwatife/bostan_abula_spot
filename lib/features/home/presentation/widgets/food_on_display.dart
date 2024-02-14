@@ -66,12 +66,35 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
                   fontWeight: FontWeight.w600,
                 ),
                 const Gap(10),
-                CustomText(
+                 Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '₦',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffFA4A0C),
+                        ),
+                      ),
+                      TextSpan(
+                        text: widget.price.toString(), // Replace this with the amount you want to display
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffFA4A0C),
+                          fontFamily: 'Poppins'
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+               /* CustomText(
                   text: '₦${widget.price}',
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xffFA4A0C),
-                ),
+                ),*/
               ],
             ),
           ),

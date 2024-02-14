@@ -124,15 +124,15 @@ class TabFoodContent extends StatelessWidget {
                   ),
                   FoodOnDisplay(
                     foodName: 'Fufu',
-                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                    imageUrl: 'https://foodieng.com/wp-content/uploads/2022/05/fufu-2.jpg',
                   ),
                   FoodOnDisplay(
                     foodName: 'Semo',
-                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                    imageUrl: 'https://mamacassng.com/wp-content/uploads/2020/10/P1070100.jpg',
                   ),
                   FoodOnDisplay(
                     foodName: 'Pupuru',
-                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                    imageUrl: 'https://1.bp.blogspot.com/-SN-i0bPwYdo/WcaBj1u_7CI/AAAAAAAACWU/7zQs3BArbbMt4slHwSMzeqVrk7yKYZEowCLcBGAs/s1600/tuwo-rice.jpg-resize%253D750%25252C499.cf.jpg',
                   ),
                 ]),
               ),
