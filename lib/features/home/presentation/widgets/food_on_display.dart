@@ -18,50 +18,7 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
     return Container(
       color: Colors.transparent,
       padding: const EdgeInsets.only(left: 12, right: 12.0),
-      child:
-          /*  Stack(
-        children: [
-          Positioned(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
-              ),
-              width: size.width*0.5,
-              height: size.height*0.3,
-              child: const Column(children: [
-                Spacer(),
-                CustomText(text: 'Amala', ),
-                Gap(10),
-                CustomText(text: '₦300'),
-              ]),
-            ),
-          ),
-          Positioned(
-            top: 10,
-            left: 0,
-            right: 0,
-            child: CircleAvatar(
-              maxRadius: 50,
-              child: Container(
-               // padding: const EdgeInsets.all(12),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: Image.network(
-                  'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
-                  // Replace with your image URL
-                  width: 50.0,
-                  height: 50.0,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),*/
-          Stack(
+      child: Stack(
         children: [
           Container(
             width: size.width * 0.5,
@@ -89,7 +46,7 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
             ),
             child: const Column(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Spacer(),
                 CustomText(
@@ -100,20 +57,21 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
               ],
             ),
           ),
-          Positioned(
+          const Positioned(
             left: Constants.padding,
             right: Constants.padding,
             child: CircleAvatar(
               radius: 50,
-              backgroundColor: Colors.deepOrange[200],
-              child: const Padding(
+              backgroundColor: Colors.white,
+              //Colors.deepOrange[400],
+              child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(
                     'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
                   ),
                   radius: 50,
-                 /* child: ClipOval(
+                  /* child: ClipOval(
                     child: Image.network(
                       'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
                       fit: BoxFit.cover,

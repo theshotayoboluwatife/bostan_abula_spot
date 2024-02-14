@@ -88,32 +88,36 @@ class TabFoodContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Align(
-          alignment: Alignment.topRight,
-          child: TextButton(
-            child: const CustomText(
-              text: 'See more',
-              fontSize: 15,
-              color: Color(0xffFA4A0C),
+    return SizedBox(
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.topRight,
+            child: TextButton(
+              child: const CustomText(
+                text: 'See more',
+                fontSize: 15,
+                color: Color(0xffFA4A0C),
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
-        ),
-        const Gap(10),
-        const SizedBox(
-          width: double.infinity,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(children: [
-              FoodOnDisplay(),
-              FoodOnDisplay(),
-              FoodOnDisplay(),
-            ]),
+          const Gap(10),
+          const Expanded(
+            child: SizedBox(
+              width: double.infinity,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(children: [
+                  FoodOnDisplay(),
+                  FoodOnDisplay(),
+                  FoodOnDisplay(),
+                ]),
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
