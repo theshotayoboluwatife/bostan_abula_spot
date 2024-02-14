@@ -16,9 +16,9 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.6,
+     // width: size.width * 0.6,
       color: Colors.transparent,
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.only(left:12, right: 12.0),
       child:
           /*  Stack(
         children: [
@@ -65,8 +65,8 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
           Stack(
         children: [
           Container(
-            //width: size.width*0.8,
-            height: size.height*0.3,
+            width: size.width*0.5,
+            height: size.height*0.4,
             padding: const EdgeInsets.only(
                 left: Constants.padding,
                 top: Constants.avatarRadius + Constants.padding,

@@ -34,14 +34,13 @@ class _FoodTabsState extends State<FoodTabs>
     return Container(
       width: double.infinity,
       height: 400,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(top: 16),
       color: Colors.transparent,
       child: Column(
         children: [
           TabBar(
             controller: _tabController,
             physics: const ClampingScrollPhysics(),
-            padding: const EdgeInsets.only(left: 0.0, right: 0.0),
             tabAlignment: TabAlignment.center,
             labelStyle:
                 const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),

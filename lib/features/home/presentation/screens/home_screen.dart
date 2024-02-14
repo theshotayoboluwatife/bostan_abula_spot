@@ -28,15 +28,17 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: 2, right: 16),
                     child: CruiseBanner()),
                 Gap(40.0),
-                CustomText(
-                  text: "Delicious\nfood for you!",
-                  textAlign: TextAlign.start,
-                  fontSize: 34.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                  child: CustomText(
+                    text: "Delicious\nfood for you!",
+                    textAlign: TextAlign.start,
+                    fontSize: 34.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
                 Gap(20.0),
-
                 FoodTabs()
               ],
             ),
