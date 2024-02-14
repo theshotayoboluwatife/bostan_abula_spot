@@ -2,6 +2,7 @@ import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/cruise_banner.dart';
 import '../widgets/menu_icon.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -32,49 +33,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Gap(20.0),
+                const Gap(30.0),
 
                 //cruise of the day
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.orange.withOpacity(0.5),
-                        blurRadius: 10.0,
-                        spreadRadius: 2.0,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const CustomText(
-                        text: "Why did the tomato turn red?",
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                      const Gap(10),
-                      GestureDetector(
-                        onTap: () {
-                          // Handle interaction if needed
-                        },
-                        child: const CustomText(
-                          text: "Tap here for the punchline!",
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.orange,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                const CruiseBanner(),
 
-                const Gap(20.0),
+                const Gap(40.0),
                 const CustomText(
                   text: "Delicious\nfood for you",
                   textAlign: TextAlign.start,
@@ -91,3 +55,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
