@@ -110,8 +110,30 @@ class TabFoodContent extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(children: [
                   FoodOnDisplay(),
-                  FoodOnDisplay(foodName: 'Pounded Yam', price: 400),
-                  FoodOnDisplay(foodName: 'Eba', price: 300,),
+                  FoodOnDisplay(
+                    foodName: 'Pounded Yam',
+                    price: 400,
+                    imageUrl:
+                        'https://www.afrisian.co.uk/cdn/shop/files/PoundedYam_400x.png?v=1693217895',
+                  ),
+                  FoodOnDisplay(
+                    foodName: 'Eba',
+                    price: 300,
+                    imageUrl:
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0foFMPPJOIZNi0MxAZoxGsIxGUbDE_mrtbmWAYjrA6DuMyjbo4_TKHBr7dC356alR-AU&usqp=CAU',
+                  ),
+                  FoodOnDisplay(
+                    foodName: 'Fufu',
+                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                  ),
+                  FoodOnDisplay(
+                    foodName: 'Semo',
+                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                  ),
+                  FoodOnDisplay(
+                    foodName: 'Pupuru',
+                    imageUrl: 'https://www.shutterstock.com/image-photo/pounded-yam-fufu-tuwo-traditional-600nw-1409516018.jpg',
+                  ),
                 ]),
               ),
             ),
