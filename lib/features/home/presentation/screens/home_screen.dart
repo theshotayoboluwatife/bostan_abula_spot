@@ -1,3 +1,4 @@
+import 'package:AbulaBostan/features/home/presentation/widgets/food_tabs.dart';
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -34,10 +35,8 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 const Gap(30.0),
-
                 //cruise of the day
                 const CruiseBanner(),
-
                 const Gap(40.0),
                 const CustomText(
                   text: "Delicious\nfood for you",
@@ -47,6 +46,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
                 const Gap(20.0),
+                const FoodTabs()
               ],
             ),
           ),

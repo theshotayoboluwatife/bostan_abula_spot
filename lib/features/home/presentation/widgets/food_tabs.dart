@@ -29,7 +29,7 @@ class _FoodTabsState extends State<FoodTabs>
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: double.infinity,
+     // height: double.infinity,
       padding: const EdgeInsets.all(16),
       color: Colors.transparent,
       child: Column(
@@ -40,7 +40,7 @@ class _FoodTabsState extends State<FoodTabs>
               Tab(text:  'Swallow'),
               Tab(text:  'Soup'),
               Tab(text: 'Meat'),
-              Tab(text: 'Tab 2'),
+              Tab(text: 'Staple'),
               Tab(text:  'Sauce'),
               Tab(text:  'Drinks'),
             ],
@@ -50,16 +50,18 @@ class _FoodTabsState extends State<FoodTabs>
             child: TabBarView(
               controller: _tabController,
               children: [
-                // Content for Tab 1
                 Container(
                   alignment: Alignment.center,
                   child: const Text("Tab 1 Content"),
                 ),
-                // Content for Tab 2
                 Container(
                   alignment: Alignment.center,
                   child: const Text("Tab 2 Content"),
                 ),
+                Container(),
+                Container(),
+                Container(),
+                Container(),
                 // Add more content for additional tabs
               ],
             ),
