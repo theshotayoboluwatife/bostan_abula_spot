@@ -9,17 +9,20 @@ class ActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const MenuIcon(),
-        IconButton(
-          icon:
-              const Icon(Icons.shopping_cart_outlined, size: 24.0),
-          onPressed: () {},
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const MenuIcon(),
+          IconButton(
+            icon:
+                const Icon(Icons.shopping_cart_outlined, size: 24.0),
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }

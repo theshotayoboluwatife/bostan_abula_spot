@@ -66,17 +66,13 @@ class _FoodTabsState extends State<FoodTabs>
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
-                const TabFoodContent(),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Text("Tab 2 Content"),
-                ),
-                Container(),
-                Container(),
-                Container(),
-                Container(),
-                // Add more content for additional tabs
+              children: const [
+                TabFoodContent(),
+                TabFoodContent(),
+                TabFoodContent(),
+                TabFoodContent(),
+                TabFoodContent(),
+                TabFoodContent(), // Add more content for additional tabs
               ],
             ),
           ),
@@ -93,27 +89,29 @@ class TabFoodContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Align(
-          alignment: Alignment.centerRight,
-          child: CustomText(
-            text: 'See more',
-            fontSize: 15,
-            color: Color(0xffFA4A0C),
+          alignment: Alignment.topRight,
+          child: TextButton(
+            child: const CustomText(
+              text: 'See more',
+              fontSize: 15,
+              color: Color(0xffFA4A0C),
+            ),
+            onPressed: () {},
           ),
         ),
-        Gap(10),
-        SizedBox(
+        const Gap(10),
+        const SizedBox(
           width: double.infinity,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
-                children: [
-                  TabFoodContent(),
-                  TabFoodContent(),
-                  TabFoodContent(),
-                ]),
+            child: Row(children: [
+              FoodOnDisplay(),
+              FoodOnDisplay(),
+              FoodOnDisplay(),
+            ]),
           ),
         ),
       ],
