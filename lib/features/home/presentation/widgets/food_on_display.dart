@@ -16,9 +16,8 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-     // width: size.width * 0.6,
       color: Colors.transparent,
-      padding: const EdgeInsets.only(left:12, right: 12.0),
+      padding: const EdgeInsets.only(left: 12, right: 12.0),
       child:
           /*  Stack(
         children: [
@@ -65,8 +64,8 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
           Stack(
         children: [
           Container(
-            width: size.width*0.5,
-            height: size.height*0.4,
+            width: size.width * 0.5,
+            height: size.height * 0.4,
             padding: const EdgeInsets.only(
                 left: Constants.padding,
                 top: Constants.avatarRadius + Constants.padding,
@@ -74,15 +73,20 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
                 bottom: Constants.padding),
             margin: const EdgeInsets.only(top: Constants.avatarRadius),
             decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(Constants.padding),
-                boxShadow: const [
-                  BoxShadow(
-                      color: Colors.yellow,
-                      offset: Offset(0, 10),
-                      blurRadius: 10),
-                ]),
+              shape: BoxShape.rectangle,
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(Constants.padding),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 4.0,
+                  spreadRadius: 4.0,
+                  offset: const Offset(0, 8),
+                  // Set the offset to (0, 0) for the shadow to appear on all sides
+                  // blurStyle: BlurStyle.inner,
+                ),
+              ],
+            ),
             child: const Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,18 +104,21 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
             left: Constants.padding,
             right: Constants.padding,
             child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: Constants.avatarRadius,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                    Radius.circular(Constants.avatarRadius)),
-                child: Image.network(
-                  'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
-                  // Replace with your image URL
-                  /*width: 50.0,
-
-  height: 50.0,
-    fit: BoxFit.cover,*/
+              radius: 50,
+              backgroundColor: Colors.deepOrange[200],
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
+                  ),
+                  radius: 50,
+                 /* child: ClipOval(
+                    child: Image.network(
+                      'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                  ),*/
                 ),
               ),
             ),
