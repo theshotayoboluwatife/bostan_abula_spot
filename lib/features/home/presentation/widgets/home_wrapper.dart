@@ -41,21 +41,23 @@ class _HomeWrapperState extends State<HomeWrapper> {
           _goBranch(selectedIndex);
         },
         iconSize: 30,
-        inactiveColor: const Color(0xffADADAF),
+        inactiveColor: const
+        //Color(0xffFA4A0C),
+        Color(0xffADADAF),
         activeColor: const Color(0xffFA4A0C),
         selectedIndex: selectedIndex,
         barItems: [
           BarItem(
             icon: Icons.home,
-            title: '',
+            title: 'Home',
           ),
           BarItem(
             icon: Icons.person,
-            title: '',
+            title: 'Profile',
           ),
           BarItem(
             icon: Icons.history_sharp,
-            title: '',
+            title: 'History',
           ),
         ],
       ),

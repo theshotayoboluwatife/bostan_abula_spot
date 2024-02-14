@@ -3,6 +3,7 @@ import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/action_bar.dart';
 import '../widgets/cruise_banner.dart';
 import '../widgets/menu_icon.dart';
 
@@ -22,18 +23,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const MenuIcon(),
-                    IconButton(
-                      icon:
-                          const Icon(Icons.shopping_cart_outlined, size: 24.0),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
+                ActionBar(),
                 const Gap(30.0),
                 //cruise of the day
                 const CruiseBanner(),
@@ -55,4 +45,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
