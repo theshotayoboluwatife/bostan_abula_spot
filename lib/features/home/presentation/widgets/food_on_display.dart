@@ -17,7 +17,7 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
     final size = MediaQuery.of(context).size;
     return Container(
       color: Colors.transparent,
-      padding: const EdgeInsets.only(left: 12, right: 12.0),
+      padding: const EdgeInsets.only(left: 12, right: 12.0, bottom: 18.0),
       child: Stack(
         children: [
           Container(
@@ -38,7 +38,7 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
                   color: Colors.black.withOpacity(0.2),
                   blurRadius: 4.0,
                   spreadRadius: 4.0,
-                  offset: const Offset(0, 8),
+                  offset: const Offset(0, 4),
                   // Set the offset to (0, 0) for the shadow to appear on all sides
                   // blurStyle: BlurStyle.inner,
                 ),
@@ -51,9 +51,16 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
                 Spacer(),
                 CustomText(
                   text: 'Amala',
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
                 ),
                 Gap(10),
-                CustomText(text: '₦300'),
+                CustomText(
+                  text: '₦300',
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xffFA4A0C),
+                ),
               ],
             ),
           ),
