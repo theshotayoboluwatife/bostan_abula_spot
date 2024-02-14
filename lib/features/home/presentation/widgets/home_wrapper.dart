@@ -33,7 +33,7 @@ class _HomeWrapperState extends State<HomeWrapper> {
         child: widget.navigationShell,
       ),
       bottomNavigationBar: SlidingClippedNavBar(
-        backgroundColor: Colors.white,
+        backgroundColor:  const Color(0xffEDEDED),
         onButtonPressed: (index) {
           setState(() {
             selectedIndex = index;
