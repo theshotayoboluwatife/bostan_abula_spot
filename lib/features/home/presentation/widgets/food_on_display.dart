@@ -5,7 +5,16 @@ import '../../../../utiity/constants.dart';
 import '../../../../widgets/custom_text.dart';
 
 class FoodOnDisplay extends StatefulWidget {
-  const FoodOnDisplay({Key? key}) : super(key: key);
+  final String foodName, imageUrl;
+  final double price;
+
+  const FoodOnDisplay({
+    Key? key,
+    this.foodName = 'Amala',
+    this.price = 300,
+    this.imageUrl =
+        'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
+  }) : super(key: key);
 
   @override
   State<FoodOnDisplay> createState() => _FoodOnDisplayState();
@@ -44,27 +53,29 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
                 ),
               ],
             ),
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Spacer(),
+                const Spacer(),
                 CustomText(
-                  text: 'Amala',
+                  textAlign: TextAlign.center,
+                  height: 1.1,
+                  text: widget.foodName,
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                 ),
-                Gap(10),
+                const Gap(10),
                 CustomText(
-                  text: '₦300',
+                  text: '₦${widget.price}',
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xffFA4A0C),
+                  color: const Color(0xffFA4A0C),
                 ),
               ],
             ),
           ),
-          const Positioned(
+          Positioned(
             left: Constants.padding,
             right: Constants.padding,
             child: CircleAvatar(
@@ -72,10 +83,10 @@ class _FoodOnDisplayState extends State<FoodOnDisplay> {
               backgroundColor: Colors.white,
               //Colors.deepOrange[400],
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(
-                    'https://shop.axielle.com.ng/wp-content/uploads/2022/11/8a6042f0638ef2767ae75feed2fa6718.jpg',
+                    widget.imageUrl,
                   ),
                   radius: 50,
                   /* child: ClipOval(

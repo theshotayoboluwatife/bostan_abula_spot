@@ -110,8 +110,8 @@ class TabFoodContent extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(children: [
                   FoodOnDisplay(),
-                  FoodOnDisplay(),
-                  FoodOnDisplay(),
+                  FoodOnDisplay(foodName: 'Pounded Yam', price: 400),
+                  FoodOnDisplay(foodName: 'Eba', price: 300,),
                 ]),
               ),
             ),
