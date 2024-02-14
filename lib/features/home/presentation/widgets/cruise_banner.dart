@@ -16,11 +16,16 @@ class CruiseBanner extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(12),
+        shape: BoxShape.rectangle,
+        border: Border.all(color: Colors.white),
         boxShadow: [
           BoxShadow(
-            color: Colors.orange.withOpacity(0.5),
-            blurRadius: 10.0,
+            color: const Color(0xffFA4A0C).withOpacity(0.95),
+            blurRadius: 2.0,
             spreadRadius: 2.0,
+            offset: const Offset(0, 0),
+            // Set the offset to (0, 0) for the shadow to appear on all sides
+            blurStyle: BlurStyle.inner,
           ),
         ],
       ),
@@ -38,11 +43,11 @@ class CruiseBanner extends StatelessWidget {
             onTap: () {
               // Handle interaction if needed
             },
-            child: const CustomText(
+            child: CustomText(
               text: "Tap here for the punchline!",
               fontSize: 14,
               fontWeight: FontWeight.normal,
-              color: Colors.orange,
+              color: Colors.deepOrange[600]?.withOpacity(0.95),
             ),
           ),
         ],
