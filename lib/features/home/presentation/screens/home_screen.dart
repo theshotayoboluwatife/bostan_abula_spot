@@ -1,4 +1,3 @@
-import 'package:AbulaBostan/features/home/presentation/widgets/food_tab_wrapper.dart';
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -12,51 +11,83 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          padding: const EdgeInsets.all(20.0),
-          color: const Color(0xffEDEDED),
-          child: SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Gap(20),
+        width: double.infinity,
+        height: double.infinity,
+        padding: const EdgeInsets.all(20.0),
+        color: const Color(0xffEDEDED),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const MenuIcon(),
+                    IconButton(
+                      icon:
+                          const Icon(Icons.shopping_cart_outlined, size: 24.0),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                const Gap(20.0),
 
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MenuIcon(),
-                      IconButton(icon: Icon(Icons.shopping_cart_outlined, size: 24,),
-                        onPressed: () {},)
+                //cruise of the day
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.orange.withOpacity(0.5),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ),
                     ],
                   ),
-                  //cruise of the day
-                  const CustomText(
-                    text:
-                    "Which one worse pass:\nNo Internet\nZero A/C Balance\nLow Battery?",
-                    fontFamily: 'DM Sans',
-                    fontSize: 34,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CustomText(
+                        text: "Why did the tomato turn red?",
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      const Gap(10),
+                      GestureDetector(
+                        onTap: () {
+                          // Handle interaction if needed
+                        },
+                        child: const CustomText(
+                          text: "Tap here for the punchline!",
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.orange,
+                        ),
+                      ),
+                    ],
                   ),
+                ),
 
-                  //tabs for food and drinks
-                  Container(
-                      width: double.infinity,
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .height * 0.4,
-                      padding: const EdgeInsets.all(2.0),
-                      child:
-                      const DiscoveryWrapper()
-                  )
-
-                ],
-              ),
+                const Gap(20.0),
+                const CustomText(
+                  text: "Delicious\nfood for you",
+                  textAlign: TextAlign.start,
+                  fontSize: 34.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                const Gap(20.0),
+              ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

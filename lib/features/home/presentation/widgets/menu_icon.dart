@@ -11,8 +11,8 @@ class MenuIcon extends StatelessWidget {
       onTap: () {},
       child: Image.asset(
         'assets/images/abula_menu_icon.png',
-        width: 22,
-        height: 15,
+        width: 22.0,
+        height: 15.0,
       ),
     );
   }
