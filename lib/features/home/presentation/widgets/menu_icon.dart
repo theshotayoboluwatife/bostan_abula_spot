@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MenuIcon extends StatelessWidget {
   const MenuIcon({
@@ -8,7 +9,9 @@ class MenuIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.goNamed('UserProfile');
+      },
       child: Image.asset(
         'assets/images/abula_menu_icon.png',
         width: 22.0,

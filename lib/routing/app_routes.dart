@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import '../features/authentication/presentation/login_signup_screen.dart';
 import '../features/home/presentation/widgets/home_wrapper.dart';
+import '../features/profile/presentation/screens/user_profile_screen.dart';
 
 class AppNavigation {
   AppNavigation._();
@@ -81,6 +82,12 @@ class AppNavigation {
                 name: "Settings",
                 builder: (BuildContext context, GoRouterState state) =>
                     const ProfileScreen(),
+              ),
+              GoRoute(
+                path: "/user_profile",
+                name: "UserProfile",
+                builder: (BuildContext context, GoRouterState state) =>
+                    const UserProfileScreen(),
               ),
             ],
           ),

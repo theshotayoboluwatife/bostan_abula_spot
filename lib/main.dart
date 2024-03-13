@@ -11,8 +11,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'AbulaBostan',
-      debugShowCheckedModeBanner: false,
       routerConfig: AppNavigation.router,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
@@ -21,3 +19,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
