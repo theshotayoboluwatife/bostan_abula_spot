@@ -30,8 +30,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         title: const CustomText(
           text: 'My Profile',
           fontSize: 18,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
         ),
+        centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
@@ -42,6 +43,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         color: const Color(0xffEDEDED),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const UserProfileInfo(),
               buildPaymentMethods()
@@ -54,7 +57,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   Column buildPaymentMethods() {
     return Column(
-              children: [
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
                 const Gap(30),
                 const CustomText(
                   text: 'Payment Method',
@@ -69,7 +73,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    alignment: Alignment.center,
+                    alignment: Alignment.centerLeft,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -86,11 +90,12 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ),
                             PaymentMethod(
                               paymentMethod: 'Card',
-                              iconData: Icons.account_balance_outlined,
-                              color: const Color(0xffEB4796),
+                              iconData: Icons.credit_card,
+                              color: const Color(0xffF47B0A),
                             ),
                           ],
                         ),
+                        const Gap(20.0),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,6 +113,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ),
                           ],
                         ),
+                        const Gap(20.0),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,18 +156,21 @@ class PaymentMethod extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
+          padding: EdgeInsets.all(12.0),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.0), color: color),
+              borderRadius: BorderRadius.circular(10.0), color: color),
           child: paymentMethod == 'Paypal'
-              ? Image.asset('assets/images/cib_paypal.png')
+              ? Image.asset('assets/images/cib_paypal.png', width: 20, height: 20,)
               : Icon(
                   iconData,
+                  size: 20,
                   color: Colors.white,
                 ),
         ),
+        const Gap(10),
         CustomText(
           text: paymentMethod!,
-          fontSize: 14,
+          fontSize: 16,
           fontWeight: FontWeight.w500,
         ),
       ],
@@ -177,6 +186,7 @@ class UserProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Gap(30),
         const CustomText(

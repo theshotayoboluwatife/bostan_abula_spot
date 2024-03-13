@@ -13,7 +13,7 @@ import '../features/profile/presentation/screens/user_profile_screen.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = '/login-signup';
+  static String initial = '/user-profile';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -84,7 +84,7 @@ class AppNavigation {
                     const ProfileScreen(),
               ),
               GoRoute(
-                path: "/user_profile",
+                path: "/user-profile",
                 name: "UserProfile",
                 builder: (BuildContext context, GoRouterState state) =>
                     const UserProfileScreen(),
