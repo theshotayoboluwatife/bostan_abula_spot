@@ -197,13 +197,13 @@ class UserProfileInfo extends StatelessWidget {
         const Gap(10),
         Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
           alignment: Alignment.center,
           child: Row(
             children: [
-              Image.asset(width: 60.0, height: 60.0, ''),
+              Image.asset(width: 60.0, height: 60.0, 'assets/images/bolu_profile_pic.jpg'),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
