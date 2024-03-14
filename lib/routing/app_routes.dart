@@ -13,7 +13,7 @@ import '../features/profile/presentation/screens/user_profile_screen.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = '/history';
+  static String initial = '/home/order';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
