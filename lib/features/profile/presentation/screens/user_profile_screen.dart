@@ -25,6 +25,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_sharp),
+          iconSize: 20,
           onPressed: () {},
         ),
         title: const CustomText(
@@ -33,7 +34,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           fontWeight: FontWeight.w500,
         ),
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xffEDEDED),
         elevation: 0.0,
       ),
       body: Container(
