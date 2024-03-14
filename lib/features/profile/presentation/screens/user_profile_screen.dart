@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../widgets/custom_text.dart';
+import '../widgets/payment_method_widget.dart';
+import '../widgets/user_profile_info_widget.dart';
 
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key});
@@ -133,119 +135,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 ),
               ],
             )),
-      ],
-    );
-  }
-}
-
-class PaymentMethod extends StatelessWidget {
-  final String? paymentMethod;
-  IconData? iconData;
-  Color? color;
-
-  PaymentMethod(
-      {super.key,
-      required this.paymentMethod,
-      required this.color,
-      this.iconData});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(12.0),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0), color: color),
-          child: paymentMethod == 'Paypal'
-              ? Image.asset(
-                  'assets/images/cib_paypal.png',
-                  width: 20,
-                  height: 20,
-                )
-              : Icon(
-                  iconData,
-                  size: 20,
-                  color: Colors.white,
-                ),
-        ),
-        const Gap(10),
-        CustomText(
-          text: paymentMethod!,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
-      ],
-    );
-  }
-}
-
-class UserProfileInfo extends StatelessWidget {
-  const UserProfileInfo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Gap(10),
-        const CustomText(
-          text: 'Information',
-          fontSize: 17,
-          fontWeight: FontWeight.bold,
-        ),
-        const Gap(10),
-        Container(
-          width: double.infinity,
-          padding:
-              const EdgeInsets.only(top: 24.0, left: 20, right: 10, bottom: 20),
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
-          alignment: Alignment.center,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FittedBox(
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                        width: 60.0,
-                        height: 60.0,
-                        fit: BoxFit.cover,
-                        'assets/images/bolu_profile_pic.jpg')),
-              ),
-              const Gap(10),
-              const Flexible(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: 'Shotayo Boluwatife',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    Gap(10),
-                    CustomText(
-                      text: 'shotayobolu@gmail.com',
-                      fontSize: 13,
-                    ),
-                    Gap(10),
-                    CustomText(
-                      text: 'Hadassah residence, Wesco Estate, FUTA.',
-                      fontSize: 13,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
       ],
     );
   }
