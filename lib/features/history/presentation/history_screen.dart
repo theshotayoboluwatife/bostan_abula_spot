@@ -28,6 +28,7 @@ class HistoryScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        padding: EdgeInsets.all(20.0),
         color: const Color(0xffEDEDED),
         child:  Center(
           child: Column(
@@ -35,7 +36,7 @@ class HistoryScreen extends StatelessWidget {
               const Spacer(),
               const Icon(
                 Icons.today_outlined,
-                size: 20,
+                size: 100,
                 color: Colors.grey,
               ),
               const Gap(10),
@@ -55,6 +56,7 @@ class HistoryScreen extends StatelessWidget {
                     //context.goNamed('Home');
                   },
                   text: 'Order Now'),
+              const Gap(20),
             ],
           ),
         ),

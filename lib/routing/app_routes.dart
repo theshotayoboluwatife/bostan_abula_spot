@@ -13,7 +13,7 @@ import '../features/profile/presentation/screens/user_profile_screen.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = '/user-profile';
+  static String initial = '/history';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -22,7 +22,7 @@ class AppNavigation {
   static final _shellNavigatorSettings =
       GlobalKey<NavigatorState>(debugLabel: 'shellSettings');
   static final _shellNavigatorProfile =
-  GlobalKey<NavigatorState>(debugLabel: 'shellProfile');
+      GlobalKey<NavigatorState>(debugLabel: 'shellProfile');
   static GoRouter router = GoRouter(
     initialLocation: initial,
     debugLogDiagnostics: true,
@@ -100,7 +100,7 @@ class AppNavigation {
                 path: "/history",
                 name: "History",
                 builder: (BuildContext context, GoRouterState state) =>
-                const HistoryScreen(),
+                    const HistoryScreen(),
               ),
             ],
           ),
