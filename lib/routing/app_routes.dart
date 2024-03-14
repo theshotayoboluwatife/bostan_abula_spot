@@ -1,4 +1,4 @@
-import 'package:AbulaBostan/features/home/presentation/screens/history_screen.dart';
+import 'package:AbulaBostan/features/history/presentation/history_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/home_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/profile_screen.dart';
 import 'package:AbulaBostan/features/menu/home_menu_drawer.dart';
