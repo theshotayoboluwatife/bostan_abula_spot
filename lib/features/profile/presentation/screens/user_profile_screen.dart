@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text.dart';
 import '../widgets/payment_method_widget.dart';
 import '../widgets/user_profile_info_widget.dart';
@@ -48,7 +49,17 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [const UserProfileInfo(), buildPaymentMethods()],
+            children: [
+              const UserProfileInfo(),
+              buildPaymentMethods(),
+              const Gap(50),
+              AppButton(
+                  onPressed: () {
+                    // context.goNamed('Home');
+                  },
+                  text: 'Update'),
+              const Gap(20),
+            ],
           ),
         ),
       ),
