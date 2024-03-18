@@ -14,7 +14,7 @@ import '../features/profile/presentation/screens/user_profile_screen.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = '/checkout-delivery';
+  static String initial = '/home';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -45,7 +45,7 @@ class AppNavigation {
                 path: "/home",
                 name: "Home",
                 builder: (BuildContext context, GoRouterState state) =>
-                    const HomeScreen(),
+                     HomeScreen(),
                 routes: [
                   GoRoute(
                     path: 'order',

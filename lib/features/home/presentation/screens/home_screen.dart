@@ -8,11 +8,13 @@ import '../widgets/action_bar.dart';
 import '../widgets/cruise_banner.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       drawer: const Drawer(
         child: SafeArea(
           child: SideDrawerWidget(),
@@ -22,17 +24,19 @@ class HomeScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         color: const Color(0xffEDEDED),
-        child: const SafeArea(
+        child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ActionBar(),
-                Gap(30.0),
+                ActionBar(
+                  scaffoldKey: _scaffoldKey,
+                ),
+                const Gap(30.0),
                 //cruise of the day
-                CruiseBanner(),
-                Gap(40.0),
-                Padding(
+                const CruiseBanner(),
+                const Gap(40.0),
+                const Padding(
                   padding: EdgeInsets.only(left: 16.0, right: 16.0),
                   child: CustomText(
                     text: "Delicious\nfood for you!",
@@ -42,8 +46,8 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                Gap(20.0),
-                FoodTabs()
+                const Gap(20.0),
+                const FoodTabs()
               ],
             ),
           ),
