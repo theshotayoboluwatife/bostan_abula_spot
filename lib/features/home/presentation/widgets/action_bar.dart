@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import 'menu_icon.dart';
 
 class ActionBar extends StatelessWidget {
@@ -21,7 +21,9 @@ class ActionBar extends StatelessWidget {
             padding: EdgeInsets.zero,
             icon:
                 const Icon(Icons.shopping_cart_outlined, size: 24.0),
-            onPressed: () {},
+            onPressed: () {
+              context.goNamed('Order');
+            },
           ),
         ],
       ),

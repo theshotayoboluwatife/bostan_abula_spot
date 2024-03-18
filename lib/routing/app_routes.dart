@@ -1,3 +1,4 @@
+import 'package:AbulaBostan/features/checkout/presentation/screens/delivery_info.dart';
 import 'package:AbulaBostan/features/history/presentation/history_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/home_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/profile_screen.dart';
@@ -13,7 +14,7 @@ import '../features/profile/presentation/screens/user_profile_screen.dart';
 class AppNavigation {
   AppNavigation._();
 
-  static String initial = '/home/order';
+  static String initial = '/checkout-delivery';
 
   // Private navigators
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -117,7 +118,13 @@ class AppNavigation {
         ),
       ),
 
-      ///
+      ///checkout
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/checkout-delivery',
+        name:  'CheckOutDelivery',
+        builder: (context,state) => CheckOutDelivery(key: state.pageKey)
+      )
     ],
   );
 }

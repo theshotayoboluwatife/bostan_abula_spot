@@ -23,9 +23,9 @@ class UserProfileInfo extends StatelessWidget {
         Container(
           width: double.infinity,
           padding:
-              const EdgeInsets.only(top: 24.0, left: 20, right: 10, bottom: 20),
+          const EdgeInsets.only(top: 24.0, left: 20, right: 10, bottom: 20),
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
+            color: Colors.white, borderRadius: BorderRadius.circular(20.0),),
           alignment: Alignment.center,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
