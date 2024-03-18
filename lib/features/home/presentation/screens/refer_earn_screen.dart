@@ -1,14 +1,15 @@
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ReferEarnScreen extends StatelessWidget {
+  const ReferEarnScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        centerTitle: true,
+        title: const Text('Refer and Earn'),
       ),
       body: Container(
         width: double.infinity,
@@ -16,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
         color: const Color(0xffEDEDED),
         child: const Center(
           child: CustomText(
-            text: 'Profile Screen',
+            text: 'Refer and Earn Screen',
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),

@@ -1,7 +1,7 @@
 import 'package:AbulaBostan/features/checkout/presentation/screens/delivery_info.dart';
 import 'package:AbulaBostan/features/history/presentation/history_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/home_screen.dart';
-import 'package:AbulaBostan/features/home/presentation/screens/profile_screen.dart';
+import 'package:AbulaBostan/features/home/presentation/screens/refer_earn_screen.dart';
 import 'package:AbulaBostan/features/menu/home_menu_drawer.dart';
 import 'package:AbulaBostan/features/order/presentation/screens/order_screen.dart';
 import 'package:flutter/cupertino.dart';
