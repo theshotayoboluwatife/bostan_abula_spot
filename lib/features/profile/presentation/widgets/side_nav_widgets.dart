@@ -41,30 +41,67 @@ class SideDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 30, left: 32.0, right: 24.0),
+    return Padding(
+      padding: const EdgeInsets.only(top: 30, left: 32.0, right: 24.0),
       child: Column(
         children: [
-          ProfileAction(
+          const ProfileAction(
             label: 'Profile',
             icon: Icons.person_2_rounded,
           ),
-          ProfileAction(
+          const Gap(10),
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+          const Gap(10),
+          const ProfileAction(
             label: 'History',
             icon: Icons.person_2_rounded,
           ),
-          ProfileAction(
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+          const Gap(10),
+          const ProfileAction(
             label: 'Offers and Promo',
             icon: Icons.person_2_rounded,
           ),
-          ProfileAction(
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+          const Gap(10),
+          const ProfileAction(
             label: 'Refer and Earn',
             icon: Icons.person_2_rounded,
           ),
-          ProfileAction(
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+          const Gap(10),
+          const ProfileAction(
             label: 'Contact Us',
             icon: Icons.person_2_rounded,
           ),
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+          const Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CustomText(text: 'Sign-out'),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_forward_outlined),
+              ),
+            ],
+          ),
+          const Gap(20),
         ],
       ),
     );

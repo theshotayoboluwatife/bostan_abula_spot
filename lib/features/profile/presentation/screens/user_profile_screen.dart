@@ -126,11 +126,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         backgroundColor: const Color(0xffEDEDED),
         elevation: 0.0,
       ),
-      drawer: const Drawer(
-        child: SafeArea(
-          child: SideDrawerWidget(),
-        ),
-      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,

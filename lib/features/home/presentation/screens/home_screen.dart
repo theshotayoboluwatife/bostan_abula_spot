@@ -3,6 +3,7 @@ import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../profile/presentation/widgets/side_nav_widgets.dart';
 import '../widgets/action_bar.dart';
 import '../widgets/cruise_banner.dart';
 
@@ -12,6 +13,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(
+        child: SafeArea(
+          child: SideDrawerWidget(),
+        ),
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
