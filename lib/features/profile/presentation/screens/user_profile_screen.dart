@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/custom_text.dart';
 import '../widgets/payment_method_widget.dart';
+import '../widgets/side_nav_widgets.dart';
 import '../widgets/user_profile_info_widget.dart';
 
 class UserProfileScreen extends StatefulWidget {
@@ -157,34 +158,4 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   }
 }
 
-class SideDrawerWidget extends StatelessWidget {
-  const SideDrawerWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 30, left: 32.0, right: 24.0),
-      child: Column(
-        children: [
-          InkWell(
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.person_2_rounded),
-                Gap(6),
-                CustomText(
-                  text: 'Profile',
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
-              ],
-            ),
-            onTap: () => context.goNamed('route'),
-          )
-        ],
-      ),
-    );
-  }
-}
