@@ -19,15 +19,20 @@ class ProfileAction extends StatelessWidget {
     return InkWell(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon),
+          Icon(
+            icon,
+            color: Colors.white,
+            size: 24,
+          ),
           const Gap(6),
           CustomText(
             text: label,
             color: Colors.white,
             fontWeight: FontWeight.w500,
-            fontSize: 15,
+            fontSize: 18,
           ),
         ],
       ),
@@ -42,62 +47,47 @@ class SideDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30, left: 32.0, right: 24.0),
+      padding: const EdgeInsets.only(top: 60, left: 30.0, right: 24.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const ProfileAction(
             label: 'Profile',
             icon: Icons.person_2_rounded,
           ),
-          const Gap(10),
-          const Divider(
-            thickness: 1,
-            color: Colors.grey,
-          ),
-          const Gap(10),
+          const Gap(30),
           const ProfileAction(
             label: 'History',
-            icon: Icons.person_2_rounded,
+            icon: Icons.history,
           ),
-          const Divider(
-            thickness: 1,
-            color: Colors.grey,
-          ),
-          const Gap(10),
+          const Gap(30),
           const ProfileAction(
             label: 'Offers and Promo',
-            icon: Icons.person_2_rounded,
+            icon: Icons.local_offer_outlined,
           ),
-          const Divider(
-            thickness: 1,
-            color: Colors.grey,
-          ),
-          const Gap(10),
+          const Gap(30),
           const ProfileAction(
             label: 'Refer and Earn',
-            icon: Icons.person_2_rounded,
+            icon: Icons.share_sharp,
           ),
-          const Divider(
-            thickness: 1,
-            color: Colors.grey,
-          ),
-          const Gap(10),
+          const Gap(30),
           const ProfileAction(
             label: 'Contact Us',
-            icon: Icons.person_2_rounded,
-          ),
-          const Divider(
-            thickness: 1,
-            color: Colors.grey,
+            icon: Icons.chat,
           ),
           const Spacer(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CustomText(text: 'Sign-out'),
+              const CustomText(
+                text: 'Sign-out',
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+              ),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.arrow_forward_outlined),
+                color: Colors.white,
               ),
             ],
           ),
