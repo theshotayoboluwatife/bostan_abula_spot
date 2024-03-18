@@ -82,7 +82,7 @@ class AppNavigation {
                 path: "/settings",
                 name: "Settings",
                 builder: (BuildContext context, GoRouterState state) =>
-                    const ProfileScreen(),
+                    const UserProfileScreen(),
               ),
               GoRoute(
                 path: "/user-profile",

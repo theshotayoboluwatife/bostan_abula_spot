@@ -1,8 +1,8 @@
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class ContactUsScreen extends StatelessWidget {
-  const ContactUsScreen({Key? key}) : super(key: key);
+class OffersPromoScreen extends StatelessWidget {
+  const OffersPromoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
