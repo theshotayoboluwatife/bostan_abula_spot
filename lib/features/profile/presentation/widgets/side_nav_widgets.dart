@@ -50,19 +50,19 @@ class SideDrawerWidget extends StatelessWidget {
             icon: Icons.person_2_rounded,
           ),
           ProfileAction(
-            label: 'Profile',
+            label: 'History',
             icon: Icons.person_2_rounded,
           ),
           ProfileAction(
-            label: 'Profile',
+            label: 'Offers and Promo',
             icon: Icons.person_2_rounded,
           ),
           ProfileAction(
-            label: 'Profile',
+            label: 'Refer and Earn',
             icon: Icons.person_2_rounded,
           ),
           ProfileAction(
-            label: 'Profile',
+            label: 'Contact Us',
             icon: Icons.person_2_rounded,
           ),
         ],
