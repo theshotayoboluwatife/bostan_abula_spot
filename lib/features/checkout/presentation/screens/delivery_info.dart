@@ -128,6 +128,7 @@ class _CheckOutDeliveryState extends State<CheckOutDelivery> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,7 +147,7 @@ class _CheckOutDeliveryState extends State<CheckOutDelivery> {
                         )
                       ],
                     ),
-                    const Gap(20.0),
+                    const Gap(10.0),
                     const Divider(
                       thickness: 1,
                       color: Colors.grey,
