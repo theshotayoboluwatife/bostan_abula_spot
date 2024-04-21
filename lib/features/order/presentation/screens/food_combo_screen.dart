@@ -15,77 +15,109 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.all(20.0),
         color: const Color(0xffEDEDED),
         child: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CustomText(
-                text: 'Make your order',
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                textAlign: TextAlign.center,
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: CustomText(
+                  text: 'Make your order',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  textAlign: TextAlign.center,
+                ),
               ),
-              const Gap(20),
-              FoodCategoryWidget(
-                foodName: 'Swallow',
-              ),
-              FoodCategoryWidget(
-                foodName: 'Soup',
-              ),
-              FoodCategoryWidget(
-                foodName: 'Meat',
-              ),
-              FoodCategoryWidget(
-                foodName: 'Staple',
-              ),
-              FoodCategoryWidget(
-                foodName: 'Sauce',
-              ),
-              FoodCategoryWidget(
-                foodName: 'Drinks',
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.black,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20.0,
+                    right: 20.0,
                   ),
-                  child: const Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [DishCounter(), NewDishButton()],
-                      ),
-                      Gap(8.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CustomText(
-                            text: 'N1,250',
-                            color: Colors.white,
-                          ),
-                          FoodComboCheckOutButton()
-                        ],
-                      ),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Gap(20),
+                        FoodCategoryWidget(
+                          foodName: 'Swallow',
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Soup',
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Meat',
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Staple',
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Sauce',
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Drinks',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              )
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FoodComboDetailsContainer(),
+                ),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class FoodComboDetailsContainer extends StatelessWidget {
+  const FoodComboDetailsContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      width: double.infinity,
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: Colors.black,
+      ),
+      child: const Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [DishCounter(), NewDishButton()],
+          ),
+          Gap(12.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomText(
+                text: 'N1,250',
+                color: Colors.white,
+              ),
+              FoodComboCheckOutButton()
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -106,6 +138,7 @@ class FoodComboCheckOutButton extends StatelessWidget {
             text: "Checkout",
             color: Colors.white,
           ),
+          Gap(6),
           Icon(
             Icons.arrow_forward_outlined,
             color: Colors.white,
@@ -132,6 +165,7 @@ class NewDishButton extends StatelessWidget {
             text: "New Dish",
             color: Colors.white,
           ),
+          Gap(4),
           Icon(
             Icons.add,
             color: Colors.white,
@@ -155,13 +189,13 @@ class DishCounter extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/dish_icon.png',
-          width:22,
-          height:22,
+          width: 22,
+          height: 22,
           color:
-          // Colors.white,
-          const Color(0xffFA4A0C),
+              // Colors.white,
+              const Color(0xffFA4A0C),
         ),
-        Gap(6),
+        const Gap(6),
         const CustomText(
           text: 'x2',
           color: Colors.white,
