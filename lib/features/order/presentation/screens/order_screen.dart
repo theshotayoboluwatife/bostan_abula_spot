@@ -1,6 +1,7 @@
 import 'package:AbulaBostan/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../widgets/custom_button.dart';
 
@@ -53,7 +54,7 @@ class OrderScreen extends StatelessWidget {
               const Spacer(),
               AppButton(
                   onPressed: () {
-                    //context.goNamed('Home');
+                    context.goNamed('FoodCombo');
                   },
                   text: 'Order Now'),
               const Gap(20),

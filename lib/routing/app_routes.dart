@@ -3,6 +3,7 @@ import 'package:AbulaBostan/features/history/presentation/history_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/home_screen.dart';
 import 'package:AbulaBostan/features/home/presentation/screens/refer_earn_screen.dart';
 import 'package:AbulaBostan/features/menu/home_menu_drawer.dart';
+import 'package:AbulaBostan/features/order/presentation/screens/food_combo_screen.dart';
 import 'package:AbulaBostan/features/order/presentation/screens/order_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -45,8 +46,19 @@ class AppNavigation {
                 path: "/home",
                 name: "Home",
                 builder: (BuildContext context, GoRouterState state) =>
-                     HomeScreen(),
+                    HomeScreen(),
                 routes: [
+                  GoRoute(
+                    path: 'menu',
+                    name: 'Menu',
+                    pageBuilder: (context, state) => CustomTransitionPage<void>(
+                      key: state.pageKey,
+                      child: const MenuDrawer(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) =>
+                              FadeTransition(opacity: animation, child: child),
+                    ),
+                  ),
                   GoRoute(
                     path: 'order',
                     name: 'Order',
@@ -59,11 +71,11 @@ class AppNavigation {
                     ),
                   ),
                   GoRoute(
-                    path: 'menu',
-                    name: 'Menu',
+                    path: 'food-combo',
+                    name: 'FoodCombo',
                     pageBuilder: (context, state) => CustomTransitionPage<void>(
                       key: state.pageKey,
-                      child: const MenuDrawer(),
+                      child: const FoodComboScreen(),
                       transitionsBuilder:
                           (context, animation, secondaryAnimation, child) =>
                               FadeTransition(opacity: animation, child: child),
@@ -120,11 +132,10 @@ class AppNavigation {
 
       ///checkout
       GoRoute(
-        parentNavigatorKey: _rootNavigatorKey,
-        path: '/checkout-delivery',
-        name:  'CheckOutDelivery',
-        builder: (context,state) => CheckOutDelivery(key: state.pageKey)
-      )
+          parentNavigatorKey: _rootNavigatorKey,
+          path: '/checkout-delivery',
+          name: 'CheckOutDelivery',
+          builder: (context, state) => CheckOutDelivery(key: state.pageKey))
     ],
   );
 }
