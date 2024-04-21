@@ -3,9 +3,14 @@ import 'package:gap/gap.dart';
 
 import '../../../../widgets/custom_text.dart';
 
-class FoodComboScreen extends StatelessWidget {
+class FoodComboScreen extends StatefulWidget {
   const FoodComboScreen({super.key});
 
+  @override
+  State<FoodComboScreen> createState() => _FoodComboScreenState();
+}
+
+class _FoodComboScreenState extends State<FoodComboScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +47,16 @@ class FoodComboScreen extends StatelessWidget {
               FoodCategoryWidget(
                 foodName: 'Drinks',
               ),
+              Container(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [],
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -50,16 +65,24 @@ class FoodComboScreen extends StatelessWidget {
   }
 }
 
-class FoodCategoryWidget extends StatelessWidget {
+class FoodCategoryWidget extends StatefulWidget {
   final String? foodName;
   bool isCollapsed;
 
-  void toggleArrowIcon() {
-    isCollapsed = !isCollapsed;
-  }
-
   FoodCategoryWidget(
       {super.key, required this.foodName, this.isCollapsed = false});
+
+  @override
+  State<FoodCategoryWidget> createState() => _FoodCategoryWidgetState();
+}
+
+class _FoodCategoryWidgetState extends State<FoodCategoryWidget> {
+  void toggleArrowIcon() {
+    setState(() {
+      widget.isCollapsed = !widget.isCollapsed;
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,15 +96,17 @@ class FoodCategoryWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomText(
-                text: foodName!,
+                text: widget.foodName!,
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
               IconButton(
-                icon: isCollapsed
+                icon: widget.isCollapsed
                     ? const Icon(Icons.keyboard_arrow_down_sharp)
-                    : const Icon(Icons.keyboard_arrow_up_sharp),
-                onPressed: () => toggleArrowIcon,
+                    : const Icon(Icons.keyboard_arrow_right_sharp),
+                onPressed: () {
+                  toggleArrowIcon();
+                },
               )
             ],
           ),
