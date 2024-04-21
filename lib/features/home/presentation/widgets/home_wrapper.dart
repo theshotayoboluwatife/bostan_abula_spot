@@ -17,12 +17,12 @@ class   HomeWrapper extends StatefulWidget {
 class _HomeWrapperState extends State<HomeWrapper> {
   int selectedIndex = 0;
 
-  void _goBranch(int index) {
+ /* void _goBranch(int index) {
     widget.navigationShell.goBranch(
       index,
       initialLocation: index == widget.navigationShell.currentIndex,
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _HomeWrapperState extends State<HomeWrapper> {
         height: double.infinity,
         child: widget.navigationShell,
       ),
-      bottomNavigationBar: SlidingClippedNavBar(
+     /* bottomNavigationBar: SlidingClippedNavBar(
         backgroundColor:  const Color(0xffEDEDED),
         onButtonPressed: (index) {
           setState(() {
@@ -59,7 +59,7 @@ class _HomeWrapperState extends State<HomeWrapper> {
             title: 'History',
           ),
         ],
-      ),
+      ),*/
     );
   }
 }

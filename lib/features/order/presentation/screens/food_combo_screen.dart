@@ -28,9 +28,6 @@ class FoodComboScreen extends StatelessWidget {
                 foodName: 'Swallow',
               ),
               FoodCategoryWidget(
-                foodName: 'Swallow',
-              ),
-              FoodCategoryWidget(
                 foodName: 'Soup',
               ),
               FoodCategoryWidget(
@@ -69,7 +66,8 @@ class FoodCategoryWidget extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomText(
