@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -47,20 +48,121 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
               FoodCategoryWidget(
                 foodName: 'Drinks',
               ),
-              Container(
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [],
-                    )
-                  ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.black,
+                  ),
+                  child: const Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [DishCounter(), NewDishButton()],
+                      ),
+                      Gap(2.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            text: 'N1,250',
+                            color: Colors.white,
+                          ),
+                          FoodComboCheckOutButton()
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class FoodComboCheckOutButton extends StatelessWidget {
+  const FoodComboCheckOutButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CustomText(
+            text: "Checkout",
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.arrow_forward_outlined,
+            color: Colors.white,
+          )
+        ],
+      ),
+      onTap: () {},
+    );
+  }
+}
+
+class NewDishButton extends StatelessWidget {
+  const NewDishButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CustomText(
+            text: "New Dish",
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.add,
+            color: Colors.white,
+          )
+        ],
+      ),
+      onTap: () {},
+    );
+  }
+}
+
+class DishCounter extends StatelessWidget {
+  const DishCounter({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(
+          'assets/images/dish_icon.png',
+          color: const Color(0xffFA4A0C),
+        ),
+        const CustomText(
+          text: 'x2',
+          color: Colors.white,
+        )
+      ],
     );
   }
 }
@@ -80,7 +182,6 @@ class _FoodCategoryWidgetState extends State<FoodCategoryWidget> {
   void toggleArrowIcon() {
     setState(() {
       widget.isCollapsed = !widget.isCollapsed;
-
     });
   }
 
