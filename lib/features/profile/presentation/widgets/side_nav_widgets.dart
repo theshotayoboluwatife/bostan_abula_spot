@@ -83,10 +83,14 @@ class SideDrawerWidget extends StatelessWidget {
                 text: 'Sign-out',
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
+                fontSize: 18,
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.arrow_forward_outlined),
+                icon: const Icon(
+                  Icons.arrow_forward_outlined,
+                  size: 20,
+                ),
                 color: Colors.white,
               ),
             ],

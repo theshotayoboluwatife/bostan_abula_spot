@@ -17,9 +17,7 @@ class HomeScreen extends StatelessWidget {
       key: _scaffoldKey,
       drawer: const Drawer(
         backgroundColor: Color(0xffFA4A0C),
-        child: SafeArea(
-          child: SideDrawerWidget(),
-        ),
+        child: SideDrawerWidget(),
       ),
       body: Container(
         width: double.infinity,
