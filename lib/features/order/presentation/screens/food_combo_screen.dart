@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -53,9 +52,9 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
                 child: Container(
                   alignment: Alignment.center,
                   width: double.infinity,
-                  padding: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     color: Colors.black,
                   ),
                   child: const Column(
@@ -68,7 +67,7 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [DishCounter(), NewDishButton()],
                       ),
-                      Gap(2.0),
+                      Gap(8.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,8 +155,13 @@ class DishCounter extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/dish_icon.png',
-          color: const Color(0xffFA4A0C),
+          width:22,
+          height:22,
+          color:
+          // Colors.white,
+          const Color(0xffFA4A0C),
         ),
+        Gap(6),
         const CustomText(
           text: 'x2',
           color: Colors.white,
