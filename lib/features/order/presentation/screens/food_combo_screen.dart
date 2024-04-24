@@ -15,6 +15,7 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         color: const Color(0xffEDEDED),
         child: SafeArea(
           child: Column(
@@ -34,7 +35,7 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(
                     left: 20.0,
-                    right: 20.0,
+                    right: 12.0,
                   ),
                   child: SingleChildScrollView(
                     child: Column(
@@ -60,6 +61,13 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
                         FoodCategoryWidget(
                           foodName: 'Drinks',
                         ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 6.0, right: 28),
+                          child: FoodItemWidget(
+                            foodName: 'Amala',
+                            price: 'N400',
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -75,6 +83,112 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class FoodItemWidget extends StatelessWidget {
+  final String foodName, price;
+
+  const FoodItemWidget({
+    super.key,
+    required this.foodName,
+    required this.price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(top: 6, bottom: 6, left: 8, right: 18),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+          border: Border.all(color: Color(0xff9e9e9e), width: 1)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(text: foodName, fontWeight: FontWeight.w500),
+              CustomText(
+                text: price,
+                fontWeight: FontWeight.w500,
+                color: const Color(0xffFA4A0C),
+              ),
+            ],
+          ),
+          const ItemCounter(
+            size: 24,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ItemCounter extends StatelessWidget {
+  final double size;
+
+  const ItemCounter({
+    super.key,
+    required this.size,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      height: size,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        //Color(0xffEDEDED)
+        color: Color(0xfff5f5f5),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: size,
+            height: size,
+            decoration: const BoxDecoration(
+              color: Color(0xffbbbbbb),
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              shape: BoxShape.rectangle,
+            ),
+            child: const Icon(
+              Icons.remove,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
+          Container(
+              color: const Color.fromRGBO(255, 255, 255, 0.0),
+              alignment: Alignment.center,
+              height: size,
+              width: size * 1.5,
+              child: const CustomText(
+                text: '3',
+              )),
+          Container(
+            width: size,
+            height: size,
+            decoration: const BoxDecoration(
+              color: Color(0xffFA4A0C),
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              shape: BoxShape.rectangle,
+            ),
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -230,8 +344,8 @@ class _FoodCategoryWidgetState extends State<FoodCategoryWidget> {
         Align(
           alignment: Alignment.centerLeft,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomText(
