@@ -18,69 +18,74 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
         width: double.infinity,
         color: const Color(0xffEDEDED),
         child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: CustomText(
-                  text: 'Make your order',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20.0,
-                    right: 12.0,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: CustomText(
+                    text: 'Make your order',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    textAlign: TextAlign.center,
                   ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Gap(20),
-                        FoodCategoryWidget(
-                          foodName: 'Swallow',
-                        ),
-                        FoodCategoryWidget(
-                          foodName: 'Soup',
-                        ),
-                        FoodCategoryWidget(
-                          foodName: 'Meat',
-                        ),
-                        FoodCategoryWidget(
-                          foodName: 'Staple',
-                        ),
-                        FoodCategoryWidget(
-                          foodName: 'Sauce',
-                        ),
-                        FoodCategoryWidget(
-                          foodName: 'Drinks',
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 6.0, right: 28),
-                          child: FoodItemWidget(
-                            foodName: 'Amala',
-                            price: 'N400',
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                      right: 12.0,
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Gap(20),
+                          FoodCategoryWidget(
+                            foodName: 'Swallow',
                           ),
-                        )
-                      ],
+                          ListView.builder(
+                            itemBuilder: (context, index) {},
+                          ),
+                          FoodCategoryWidget(
+                            foodName: 'Soup',
+                          ),
+                          FoodCategoryWidget(
+                            foodName: 'Meat',
+                          ),
+                          FoodCategoryWidget(
+                            foodName: 'Staple',
+                          ),
+                          FoodCategoryWidget(
+                            foodName: 'Sauce',
+                          ),
+                          FoodCategoryWidget(
+                            foodName: 'Drinks',
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 6.0, right: 28),
+                            child: FoodItemWidget(
+                              foodName: 'Amala',
+                              price: 'N400',
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FoodComboDetailsContainer(),
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: FoodComboDetailsContainer(),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
