@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../widgets/custom_text.dart';
+import '../../data/food_item_price_repo.dart';
 
 class FoodComboScreen extends StatefulWidget {
   const FoodComboScreen({super.key});
@@ -13,79 +15,180 @@ class FoodComboScreen extends StatefulWidget {
 class _FoodComboScreenState extends State<FoodComboScreen> {
   @override
   Widget build(BuildContext context) {
+    var listOfFoodItems = FoodData.foodItemPrice;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
         color: const Color(0xffEDEDED),
         child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: CustomText(
-                    text: 'Make your order',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    textAlign: TextAlign.center,
-                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: CustomText(
+                  text: 'Make your order',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  textAlign: TextAlign.center,
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20.0,
-                      right: 12.0,
+              ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(
+                    left: 20.0,
+                    right: 12.0,
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Gap(20),
+                        FoodCategoryWidget(
+                          foodName: 'Swallow',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Soup',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Meat',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Staple',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Sauce',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        FoodCategoryWidget(
+                          foodName: 'Drinks',
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: listOfFoodItems.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 6.0, right: 28, bottom: 10.0),
+                                child: FoodItemWidget(
+                                  foodName: listOfFoodItems[index].itemName,
+                                  price: listOfFoodItems[index].price,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        SizedBox(height: 100,),
+
+                      ],
                     ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Gap(20),
-                          FoodCategoryWidget(
-                            foodName: 'Swallow',
-                          ),
-                          ListView.builder(
-                            itemBuilder: (context, index) {},
-                          ),
-                          FoodCategoryWidget(
-                            foodName: 'Soup',
-                          ),
-                          FoodCategoryWidget(
-                            foodName: 'Meat',
-                          ),
-                          FoodCategoryWidget(
-                            foodName: 'Staple',
-                          ),
-                          FoodCategoryWidget(
-                            foodName: 'Sauce',
-                          ),
-                          FoodCategoryWidget(
-                            foodName: 'Drinks',
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 6.0, right: 28),
-                            child: FoodItemWidget(
-                              foodName: 'Amala',
-                              price: 'N400',
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: FoodComboDetailsContainer(),
-                  ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FoodComboDetailsContainer(),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -94,7 +197,8 @@ class _FoodComboScreenState extends State<FoodComboScreen> {
 }
 
 class FoodItemWidget extends StatelessWidget {
-  final String foodName, price;
+  final String foodName;
+  final double price;
 
   const FoodItemWidget({
     super.key,
@@ -109,7 +213,7 @@ class FoodItemWidget extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.white,
-          border: Border.all(color: Color(0xff9e9e9e), width: 1)),
+          border: Border.all(color: const Color(0xff9e9e9e), width: 1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +223,7 @@ class FoodItemWidget extends StatelessWidget {
             children: [
               CustomText(text: foodName, fontWeight: FontWeight.w500),
               CustomText(
-                text: price,
+                text: price.toString(),
                 fontWeight: FontWeight.w500,
                 color: const Color(0xffFA4A0C),
               ),
@@ -150,7 +254,7 @@ class ItemCounter extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         //Color(0xffEDEDED)
-        color: Color(0xfff5f5f5),
+        color: const Color(0xfff5f5f5),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
