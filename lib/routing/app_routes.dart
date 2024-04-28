@@ -1,7 +1,6 @@
 import 'package:AbulaBostan/features/checkout/presentation/screens/delivery_info.dart';
 import 'package:AbulaBostan/features/history/presentation/history_screen.dart';
-import 'package:AbulaBostan/features/home/presentation/screens/home_screen.dart';
-import 'package:AbulaBostan/features/home/presentation/screens/refer_earn_screen.dart';
+
 import 'package:AbulaBostan/features/menu/home_menu_drawer.dart';
 import 'package:AbulaBostan/features/order/presentation/screens/food_combo_screen.dart';
 import 'package:AbulaBostan/features/order/presentation/screens/order_screen.dart';
@@ -11,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import '../features/authentication/presentation/login_signup_screen.dart';
 import '../features/home/presentation/widgets/home_wrapper.dart';
 import '../features/profile/presentation/screens/user_profile_screen.dart';
+import '../features/qr_code/generate_qr_code.dart';
 
 class AppNavigation {
   AppNavigation._();
@@ -46,7 +46,7 @@ class AppNavigation {
                 path: "/home",
                 name: "Home",
                 builder: (BuildContext context, GoRouterState state) =>
-                    HomeScreen(),
+                    const GenerateQRCode(),
                 routes: [
                   GoRoute(
                     path: 'menu',
